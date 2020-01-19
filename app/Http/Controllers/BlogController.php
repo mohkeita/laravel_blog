@@ -76,17 +76,27 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        $blog->update($request->all());
+        return redirect()->route('blogs.index')
+            ->with('success', 'Blog updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param \App\Blog $blog
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Blog $blog)
     {
-        //
+        $blog->delete();
+
+        return redirect()->route('blogs.index')
+            ->with('success','Blogs deleted successfully');
     }
 }
