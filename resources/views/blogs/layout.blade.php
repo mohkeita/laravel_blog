@@ -15,20 +15,27 @@
     </div>
 </header>
 
+<main role="main">
 
-<main role="main" class="container">
-    <div class="starter-template">
-        <h1>Laravel 6 Blog</h1>
-        <p class="lead">By: Mohamed Keita</p>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Laravel 6 Blog</h1>
+            <p class="lead text-muted">By: Mohamed Keita.</p>
+        </div>
+    </section>
 
-    @yield('content')
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            @yield('content')
+        </div>
     </div>
-</main>
 
+</main>
 
 <footer class="text-muted">
     <div class="container">
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>Laravel 6 CRUD &copy;</p>
     </div>
 </footer>
 </body>
